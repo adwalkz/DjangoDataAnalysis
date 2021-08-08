@@ -1,0 +1,49 @@
+{% extends "client/master.html" %}
+
+{% block title %} {{ client.client_name.upper }} SURVEY {% endblock %}
+
+{% block main %}
+<div class="container-fluid">
+<div class="container">
+<form action="{% url 'client:save' client.company_id %}" method="POST">
+{% csrf_token %}
+
+{% for category in categories %}
+<fieldset>
+<legend>{{ category.ques_category }}</legend>
+
+{% for q in ques_set %}
+{% if q.ques_category == category.ques_category %}
+
+{% if q.ques_type == 1 %}
+<input type="text" placeholder="{{ q.ques_text }}" id="{{ q.ques_id }}" name="{{ q.ques_id }}" min="{{ q.ques_meta_1 }}" max="{{ q.ques_meta_2 }}" required /><br/>
+
+{% elif q.ques_type == 2 %}
+<label for="{{ q.ques_id }}">{{ q.ques_text }}</label><br/>
+
+{% for c in choice_set %}
+{% if c.ques_id.ques_id == q.ques_id %}
+<input type="radio" name="{{ q.ques_id }}" id="{{ q.ques_id }}_{{ forloop.counter }}" value="{{ c.choice_text }}" required />
+<label for="{{ q.ques_id }}_{{ forloop.counter }}">{{ c.choice_text }}</label>
+{% endif %}
+{% endfor %}
+<br/>
+{% endif%}
+{% endif %}
+{% endfor %}
+</fieldset>
+{% endfor %}
+
+<br/><br/>
+
+<a href="{% url 'client:index' client.company_id %}">
+<button type="button" id="back" name="back">BACK</button>
+</a>
+<button type="reset" id="reset" name="reset">RESET</button>
+<button type="submit" id="submit" name="submit">SUBMIT</button>
+</form>
+</div>
+</div>
+
+{% endblock %}
+

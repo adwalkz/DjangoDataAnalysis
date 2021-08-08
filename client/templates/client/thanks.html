@@ -1,0 +1,18 @@
+{% extends "client/master.html" %}
+
+{% block title %} THANK YOU {% endblock %}
+
+{% block main %}
+<h1>THANKS FOR TAKING THIS SURVEY.</h1>
+
+<form action="{% url 'client:index' client.company_id %}" method="POST">
+{% csrf_token  %}
+<button type="submit">GO TO SUMMARY PAGE</button>
+</form>
+
+<a href="{% url 'ts:index' %}">Go to home</a>
+<a href="{% url 'client:feedback' client.company_id %}">Give feedback</a>
+
+{% endblock %}
+
+

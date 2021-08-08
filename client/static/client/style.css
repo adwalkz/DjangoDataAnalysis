@@ -1,0 +1,126 @@
+
+:root {
+background: #f1f5f9;
+--main-color: #DD2F6E;
+}
+
+* {
+padding: 0;
+margin: 0;
+font-family: sans-serif;
+}
+
+a {
+text-decoration: none;
+margin: 20px;
+}
+
+header {
+display: flex;
+padding: 1rem 1.5rem;
+box-shadow: 2px 2px 5px rgba(0, 0, 0, 1);
+position: fixed;
+top: 0;
+width: 100%;
+background: var(--main-color);
+color: #fff;
+height: 7rem;
+font-size: 3rem;
+}
+
+main {
+padding: 2rem;
+margin: 170px 20px 20px 20px;
+background: #fff;
+}
+
+form {
+padding: 30px;
+}
+
+form label {
+padding: 10px;
+font-size: 1.5rem;
+}
+
+form input {
+padding: 5px;
+margin: 10px;
+height: 20px;
+width: 80%;
+}
+
+form input[type=text], input[type=number] {
+margin-bottom: 20px;
+height: 4rem;
+font-size: 1.5rem;
+appearance: textfield;
+}
+
+form input[type=radio] {
+padding: 10px;
+margin: 5px;
+margin-bottom: 20px;
+width: 10%;
+}
+
+button {
+padding: 1rem;
+margin-top: 10px;
+background: var(--main-color);
+border: none;
+color: white;
+font-size: 1rem;
+font-weight: bold;
+text-align: center;
+}
+
+button:hover {
+background: #fff;
+color: var(--main-color);
+border: solid;
+}
+
+form textarea {
+padding: 10px;
+margin: 10px;
+width: 80%;
+height: 100px;
+resize: none;
+font-size: 1.5rem;
+}
+
+fieldset {
+padding: 30px;
+margin: 30px;
+border: groove;
+}
+
+legend {
+font-size: 1.5rem;
+padding: 5px;
+font-weight: bold;
+color: var(--main-color);
+}
+
+.survey_index fieldset {
+margin: 0px;
+background: #f1f5f9;
+border: dotted;
+}
+
+.survey_index legend {
+font-size: 50px;
+background: #fff;
+}
+
+table {
+width: 100%;
+border: dashed;
+}
+
+table tr, table td {
+padding: 30px;
+font-size: 1.5rem;
+}
+

@@ -1,0 +1,29 @@
+{% extends "client/master.html" %}
+
+{% block title %}FEEDBACK{% endblock %}
+
+{% block main %}
+<fieldset>
+<legend>FEEDBACK FORM</legend>
+<form action="{% url 'ts:index' %}" method="post">
+{% csrf_token %}
+<label for="emailid">Enter your email id: </label><br/>
+<input type="text" id="emailid" name="emailid" placeholder="Your email id" autofocus required/>
+
+<br/><br/>
+
+<label for="name">Enter your full name: </label><br/>
+<input type="text" id="name" name="name" placeholder="Your full name" required />
+
+<br/><br/>
+
+<label for="feed">Your Feedback</label><br/>
+<textarea placeholder="Your feedback" width="80%" required></textarea>
+
+<br/><br/>
+
+<button type="submit">SUBMIT FEEDBACK</button>
+</form>
+</fieldset>
+{% endblock %}
+
