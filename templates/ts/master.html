@@ -1,0 +1,64 @@
+{% load static %}
+
+<!doctype html>
+
+<html lang="eng">
+
+<head>
+<meta charset="UTF-8">
+<link rel="shortcut icon" type="image/png" href="{% static 'ts/index.png'%}" />
+<title>{% block title %}{% endblock %}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="{% static 'ts/style.css' %}">
+</head>
+
+<body>
+
+<div class="sidebar">
+<div class="sidebar-brand">
+	<h1>takeSurvey<span>.com</span></h1>
+</div>
+
+<div class="sidebar-items">
+</div>
+</div>
+
+<header>	
+	<h1>DASHBOARD</h1>
+	<a href="admin/"><button>ADMIN LOG IN</button></a>
+</header>
+
+<main>
+<h3>RECENT SURVEYS</h3>
+{% block main %}{% endblock %}
+</main>
+
+<aside>
+<h3>ABOUT US</h3>
+<address>
+<strong>'takeSurvey.com'</strong> conduct survey(s) on behalf of their clients, mostly PRODUCT based companies. We are recognised by many big firms and are known for our quality surveys. Our firm was established in year <time>2020</time> by Mr. <strong>ADITYA JAIN</strong>.
+</address>
+<br/>
+
+<h3>POST US</h3>
+<address>P-33/2 Industrial Area, Delhi-110020</address>
+<br/>
+
+<h3>WRITE US</h3>
+<address>info@takesurvey.com</address>
+<br/>
+
+<h3>FOLLOW US</h3>
+<a href="#"><img src="{% static 'ts/instagram.png'%}" width="50" height="50"></a>
+<a href="#"><img src="{% static 'ts/facebook.png'%}" width="50" height="50"></a>
+<a href="#"><img src="{% static 'ts/twitter.png'%}" width="50" height="50"></a>
+</aside>
+</body>
+
+<footer>
+<a href="">Terms</a>
+<a href="">Privacy Policy</a>
+</footer>
+
+</html>
+
