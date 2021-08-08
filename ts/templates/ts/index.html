@@ -1,0 +1,14 @@
+{% extends "ts/master.html" %}
+
+{% block title %} We Take Survery {% endblock %}
+
+{% block main %}
+<ul>
+{% for survey in latest_survey_list %}
+	<li><a href="{{ survey.company_id }}/">{{ survey.client_name.upper }}</a></li>
+{% empty %}
+	<p class="error">NO SURVEY AVAILABLE.</p>
+{% endfor %}
+</ul>
+{% endblock %}
+
